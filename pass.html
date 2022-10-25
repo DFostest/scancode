@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0"><meta name="screen-orientation" content="portrait"><meta name="x5-orientation" content="portrait"><link rel="icon" href="https://pass.sjtu.edu.cn/favicon.ico"><title>场所码</title><link href="https://pass.sjtu.edu.cn/static/css/app.d9130b04.css" rel="preload" as="style"><link href="https://pass.sjtu.edu.cn/static/css/chunk-vendors.f92cd1c5.css" rel="preload" as="style"><link href="https://pass.sjtu.edu.cn/static/css/chunk-vendors.f92cd1c5.css" rel="stylesheet"><link href="https://pass.sjtu.edu.cn/static/css/app.d9130b04.css" rel="stylesheet"><link href="https://pass.sjtu.edu.cn/static/css/app.d9130b04.css?t=v1" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="https://pass.sjtu.edu.cn/static/css/chunk-37245bc2.ef7c2965.css"><style type="text/css">@font-face {
+  font-family: 'rbicon';
+  src: url(chrome-extension://dipiagiiohfljcicegpgffpbnjmgjcnf/fonts/rbicon.woff2) format("woff2");
+  font-weight: normal;
+  font-style: normal; }
+</style></head><body><noscript><strong>We're sorry but ui doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"><div data-v-7d8882ea="" class="wrapper"><div data-v-4537a0ab="" data-v-7d8882ea="" class="user-card"><div data-v-4537a0ab="" class="card-wrapper"><div data-v-4537a0ab="" class="avatar"><img data-v-4537a0ab="" src=""></div><div data-v-4537a0ab="" class="user-info"><div data-v-4537a0ab=""><span data-v-4537a0ab="" class="label">姓名：</span><span data-v-4537a0ab="" class="english value"></span></div><div data-v-4537a0ab=""><span data-v-4537a0ab="" class="label">学号：</span><span data-v-4537a0ab="" class="value"></span></div><div data-v-4537a0ab=""><span data-v-4537a0ab="" class="label">单位：</span><span data-v-4537a0ab="" class="value ft14">电子信息与电气工程学院</span></div></div></div></div><div data-v-7d8882ea="" class="qrcode-wrapper"><img data-v-7d8882ea="" src="https://pass.sjtu.edu.cn/static/img/welcome.dfbc2469.gif"><div data-v-7d8882ea="" class="building"></div><div data-v-7d8882ea="" class="time"><span data-v-7d8882ea=""></span><span data-v-7d8882ea="" class="lg-time"></span></div></div></div></div><script src="https://pass.sjtu.edu.cn/static/js/chunk-vendors.8d2a9c5d.js"></script><script>
+	var url = location.search;
+	if (url.indexOf("?") != -1) {
+		var strs = url.substr(1).split("&");
+		for (var i = 0; i < strs.length; i++) {
+			value = decodeURI(strs[i].split("=")[1]);
+			switch (strs[i].split("=")[0]) {
+			case "avatar":
+				document.querySelector("div.avatar > img").src = "https://api.sjtu.edu.cn/v1/file/" + value;
+				break;
+			case "name":
+				document.querySelector("div.user-info > div:nth-child(1) > span.value").innerHTML = value;
+				break;
+			case "number":
+				document.querySelector("div.user-info > div:nth-child(2) > span.value").innerHTML = value;
+				break;
+			case "building":
+				document.querySelector("div.building").innerHTML = value;
+			}
+		}
+	}
+	function dateFormat(){var t=new Date,e=t.getMonth()+1,r=t.getDate(),n=t.getHours(),i=t.getMinutes(),o=t.getSeconds(),c="".concat(e,"月").concat(r>9?r:"0".concat(r),"日 ").concat(n>9?n:"0".concat(n),":").concat(i>9?i:"0".concat(i));return"".concat(c,":").concat(o>9?o:"0".concat(o))};
+	setInterval(function() {
+		var dateStr = dateFormat();
+		var div = document.querySelector("div.time")
+		div.children[0].innerHTML = dateStr.slice(0, -2);
+		div.children[1].innerHTML = dateStr.slice(-2);
+	}, 100);
+</script><div id="rememberry__extension__root" style="all: unset;"></div></body></html>
